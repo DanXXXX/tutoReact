@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component} from 'react';
+import Mycars from './components/Mycars';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+;
+
+class App extends Component {
+  
+
+  state = {
+    titre: "Mon catalogue Voitures"
+  }
+
+
+  changeTitle = (e) => {
+    this.setState({
+      titre: 'Voici mon nouveau Titre'
+    })
+  }
+
+  changeViaParam = (titre) => {
+    this.setState({
+      titre: titre
+    })
+    
+  }
+
+
+  changeViaBind = (param) => {
+    this.setState({
+      titre: param
+    })
+  }
+
+  changeViaInput = (e) => {
+    this.setState({titre: e.target.value})
+  }
+
+  render () {
+      return (
+          <div className="App">
+            
+              <Mycars title={this.state.titre }/>
+              
+              <button onClick={this.changeTitle} className="btn"> changer le nom en dur </button>
+              <button onClick={() => this.changeViaParam('Titre via un param')} className="btn"> Via param</button>
+              <button onClick={ this.changeViaBind.bind(this,'Titre via un Bind')} className="btn"> Via Bind</button>
+              <input type="text" onChange={this.changeViaInput} value={this.state.titre} />
+          </div>
+        );
+      
+  }
+  
 }
 
 export default App;
