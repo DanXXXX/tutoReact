@@ -1,10 +1,9 @@
 .title {
   text-align: center;
   font-size: 2rem;
-  text-decoration: underline overline wavy black;
+  text-decoration: underline  wavy black;
   color: red;
   text-transform: uppercase;
-  
 }
 .background-color__car {
   background-color: pink;

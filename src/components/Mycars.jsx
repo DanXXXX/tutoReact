@@ -3,31 +3,49 @@ import Car from './Cars';
 
 export class Mycars extends Component {
 
-  noCopy = () => {
-      alert('merci de ne pas copier le texte')
-  }
+ state = {
+      voitures: [
+        {name: " Royce Rolls", color: " black", year: "2000"},
+        {name: " ferrari", color: " red", year: "2015" },
+        {name: " Tesla", color: " bleu", year: "2021" },
+      ],
 
-  addStyle = (e) => {
-    if (e.target.classList.contains('title')) {
-      e.target.classList.remove('title');
+      titre: "Mon catalogue Voitures 2",
+ }
 
-    } else {
-      e.target.classList.add('title');
-      
-    }
-  }
+ addTenYears = (e) => {
+   const updatedState = this.state.voitures.map((param) => {
+     return param.year -= 10;
+   })
+
+  this.setState({
+      updatedState
+  })
+ }
 
   render() {
+
+      const year = new Date().getFullYear();
+      
     return (
             <div className='cars'>
                 
-                <h2 onMouseOver={this.addStyle} className='title'>{this.props.title}</h2>
+                <h2 className='title'>{this.state.titre}</h2>
                 
-                <p onCopy={this.noCopy} className="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium pariatur quas natus nam voluptatibus! Harum delectus doloribus eligendi maxime, quia quod assumenda ea numquam recusandae odit voluptas libero distinctio consectetur sapiente magni consequuntur enim nulla facere vitae officiis illo perspiciatis. Necessitatibus quae impedit esse et molestiae hic numquam in magnam.</p>
+                <button onClick={this.addTenYears} className="btn"> + 10 ans </button>
                 
-                <Car color="red"></Car>
-                <Car>ferrari</Car>
-                <Car color="vert">Tesla</Car>
+               
+                {
+                  this.state.voitures.map((voiture, index) => {
+                    return (
+                      <div key={index} className="mapper">
+                          <Car nom={voiture.name} color={voiture.color} year={year - voiture.year + ' ans' }/>
+
+                      </div>
+                    )
+                  })
+                }
+           
            </div>
           )
   }
