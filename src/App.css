@@ -1,3 +1,9 @@
+.App {
+  border: 1rem solid black;
+  padding: 1rem;
+  
+}
+
 .title {
   text-align: center;
   font-size: 2rem;
@@ -15,6 +21,30 @@
 
 .para {
   width: 50%;
-  text-align: left;
+  text-align: center;
   margin: 2rem auto;
+  font-weight: bold;
+  color: red;
+}
+
+.para2 {
+  width: 50%;
+  text-align: center;
+  margin: 2rem auto;
+  font-weight: bold;
+  color: blue;
+}
+
+.cars {
+  text-align: center;
+  
+}
+
+.parent {
+  text-align: center;
+}
+
+.btn-reponse {
+  font-size: 2rem;
+  font-weight: bolder;
 }
