@@ -12,7 +12,7 @@
   text-transform: uppercase;
 }
 .background-color__car {
-  background-color: pink;
+  
   text-align: center;
   width: 50%;
   margin: 1rem auto;
@@ -47,4 +47,29 @@
 .btn-reponse {
   font-size: 2rem;
   font-weight: bolder;
+}
+
+.carsTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, serif, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin: 20% auto;
+}
+
+.carsTable td, .carsTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 33%;
+  text-align: center;
+}
+
+.carsTable tr:hover {
+    background-color: #ddd;
+}
+
+.carsTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: rgb(24, 99, 160);
+  color: white;
 }

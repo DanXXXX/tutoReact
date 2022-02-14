@@ -1,7 +1,8 @@
 import React, { Component} from 'react';
-import Maman from './components/Maman';
-// import Mycars from './components/Mycars';
+import Display from './components/Display';
 
+// import Maman from './components/Maman';
+// import Mycars from './components/Mycars';
 import './App.css';
 ;
 
@@ -12,7 +13,8 @@ class App extends Component {
           <div className="App">
             
               {/* <Mycars /> */}
-              <Maman />
+              {/* <Maman /> */}
+              <Display />
               
           </div>
         );
